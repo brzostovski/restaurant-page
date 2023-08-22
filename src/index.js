@@ -1,23 +1,30 @@
 import './style.css';
 import Icon from './icon.png';
+import printMe from './print';
 
 function content() {
-  const content = document.getElementById('content');
+  const contentContainer = document.getElementById('content');
+  const btn = document.createElement('button');
 
-  content.innerHTML = 'This is some text added in .js';
-  content.classList.add('hello');
+  contentContainer.innerHTML = 'This is some text added in .js';
+  contentContainer.classList.add('hello');
+
+  btn.innerHTML = 'Click me and check the console!';
+  btn.onclick = printMe;
+
+  contentContainer.appendChild(btn);
 
   const credit = document.createElement('div');
   credit.innerHTML = '<a href="https://www.flaticon.com/free-icons/emoji" title="emoji icons">Emoji icons created by ARIF MIFTAHUL ANWAR - Flaticon</a>'
   
-  content.appendChild(credit);
+  contentContainer.appendChild(credit);
 
   const myIcon = new Image();
   myIcon.src = Icon;
 
-  content.appendChild(myIcon);
+  contentContainer.appendChild(myIcon);
 
-  return content;
+  return contentContainer;
 }
 
 content();
