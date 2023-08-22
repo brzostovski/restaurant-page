@@ -3,7 +3,7 @@ import Icon from './icon.png';
 import printMe from './print';
 
 function content() {
-  const contentContainer = document.getElementById('content');
+  const contentContainer = document.createElement('div');
   const btn = document.createElement('button');
 
   contentContainer.innerHTML = 'This is some text added in .js';
@@ -27,4 +27,4 @@ function content() {
   return contentContainer;
 }
 
-content();
+document.body.appendChild(content());
