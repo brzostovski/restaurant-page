@@ -14,15 +14,16 @@ function content() {
 
   contentContainer.appendChild(btn);
 
-  const credit = document.createElement('div');
-  credit.innerHTML = '<a href="https://www.flaticon.com/free-icons/emoji" title="emoji icons">Emoji icons created by ARIF MIFTAHUL ANWAR - Flaticon</a>'
-  
-  contentContainer.appendChild(credit);
-
   const myIcon = new Image();
   myIcon.src = Icon;
 
   contentContainer.appendChild(myIcon);
+
+  const credit = document.createElement('div');
+  credit.innerHTML = '<a href="https://www.flaticon.com/free-icons/emoji" title="emoji icons">Emoji icons created by ARIF MIFTAHUL ANWAR - Flaticon</a>'
+  credit.classList.add('credits');
+  
+  contentContainer.appendChild(credit);
 
   return contentContainer;
 }
