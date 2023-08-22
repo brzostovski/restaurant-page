@@ -1,1 +1,0 @@
-content=document.getElementById("content"),function(t){t.textContent="This is some text added in .js"}(content);
