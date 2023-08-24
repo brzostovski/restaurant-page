@@ -52,6 +52,11 @@ header {
   font-weight: bolder;
 }
 
+header *,
+footer * {
+  background-color: var(--banner-bg-color);
+}
+
 main {
   flex: 1;
 
