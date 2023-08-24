@@ -3,13 +3,10 @@ export default function initPage() {
   contentContainer.classList.add('content-container');
 
   let pageContents = {
-    header: document.createElement('header'),
-    homePage: homePage.init(),
-    footer: document.createElement('footer'),
+    header: header.init,
+    homePage: homePage.init,
+    footer: footer.init,
   };
-
-  pageContents.header.textContent = 'Project: Restaurant Page';
-  pageContents.footer.textContent = 'This is a footer';
 
   Object.keys(pageContents).forEach(key => {
     contentContainer.appendChild(pageContents[key]);
@@ -18,10 +15,30 @@ export default function initPage() {
   return document.body.appendChild(contentContainer);
 }
 
+const header = (() => {
+  let headerWrapper = document.createElement('header');
+
+  const init = (() => {
+    let headerContent = {
+      title: document.createElement('span'),
+    }
+
+    headerContent.title.textContent = 'Project: Restaurant Page';
+
+    Object.keys(headerContent).forEach(key => {
+      headerWrapper.appendChild(headerContent[key]);
+    });
+
+    return headerWrapper;
+  })();
+
+  return {init};
+})();
+
 const homePage = (() => {
   let homePageWrapper = document.createElement('main');
 
-  function init() {
+  const init = (() => {
     let homePageContent = {
       title: document.createElement('h1'),
     }
@@ -33,7 +50,27 @@ const homePage = (() => {
     });
 
     return homePageWrapper;
-  }
+  })();
+
+  return {init};
+})();
+
+const footer = (() => {
+  let footerWrapper = document.createElement('footer');
+
+  const init = (() => {
+    let footerContent = {
+      title: document.createElement('span'),
+    }
+
+    footerContent.title.textContent = 'This is a footer';
+
+    Object.keys(footerContent).forEach(key => {
+      footerWrapper.appendChild(footerContent[key]);
+    });
+
+    return footerWrapper;
+  })();
 
   return {init};
 })();
