@@ -2,11 +2,17 @@
   /* COLORS */
   --main-font-color: white;
   --main-bg-color: rgb(69, 69, 69);
+  --main-shadow-color: rgba(0, 0, 0, 0.5);
   --banner-bg-color: rgb(26, 26, 26);
 
   /* DIMENSIONS */
+  --main-margin: 20px;
   --main-padding: 10px;
+  --main-border-radius: 10px;
   --banner-height: 40px;
+
+  /* PROPERTIES */
+  --main-shadow: 8px 8px 16px var(--main-shadow-color);
 }
 
 * {
@@ -58,6 +64,8 @@ footer * {
 }
 
 main {
+  max-width: 800px;
+
   flex: 1;
 
   padding: var(--main-padding);
@@ -65,12 +73,16 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
+  gap: 20px;
 }
 
 main img {
   max-width: 400px;
   height: auto;
+
+  border-radius: var(--main-border-radius);
+  box-shadow: var(--main-shadow);
 }
 
 footer {
