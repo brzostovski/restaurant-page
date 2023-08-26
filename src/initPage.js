@@ -23,6 +23,7 @@ const header = (() => {
   const init = (() => {
     let headerContent = {
       title: document.createElement('span'),
+      menu: createPageMenu(),
     }
 
     headerContent.title.textContent = 'Project: Restaurant Page';
@@ -33,6 +34,31 @@ const header = (() => {
 
     return headerWrapper;
   })();
+
+  function createPageMenu() {
+    let pageMenu = document.createElement('div');
+    pageMenu.id = 'page-menu';
+
+    let buttons = {
+      home: document.createElement('button'),
+      menu: document.createElement('button'),
+      findUs: document.createElement('button'),
+    }
+
+    buttons.home.id = 'home-btn';
+    buttons.menu.id = 'menu-btn';
+    buttons.findUs.id = 'find-us-btn';
+
+    buttons.home.textContent = 'Home';
+    buttons.menu.textContent = 'Menu';
+    buttons.findUs.textContent = 'Find Us';
+
+    Object.keys(buttons).forEach(key => {
+      pageMenu.appendChild(buttons[key]);
+    });
+
+    return pageMenu;
+  };
 
   return {init};
 })();
