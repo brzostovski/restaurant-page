@@ -4,6 +4,8 @@
   --main-bg-color: rgb(69, 69, 69);
   --main-shadow-color: rgba(0, 0, 0, 0.5);
   --banner-bg-color: rgb(26, 26, 26);
+  --accent-color: dodgerblue;
+  --bg-click-color: brightness(0.7);
 
   /* DIMENSIONS */
   --main-margin: 20px;
@@ -13,6 +15,9 @@
 
   /* PROPERTIES */
   --main-shadow: 8px 8px 16px var(--main-shadow-color);
+
+  /* DURATIONS */
+  --main-transition-duration: 0.2s;
 }
 
 * {
@@ -49,6 +54,11 @@ footer {
   background-color: var(--banner-bg-color);
 }
 
+header *,
+footer * {
+  background-color: var(--banner-bg-color);
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -58,9 +68,38 @@ header {
   font-weight: bolder;
 }
 
-header *,
-footer * {
-  background-color: var(--banner-bg-color);
+#page-menu {
+  width: 20%;
+
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 20px;
+
+  margin-right: 2rem;
+}
+
+#page-menu > button {
+  all: unset;
+  font-size: medium;
+  padding: var(--main-padding);
+
+  background-color: var(--accent-color);
+
+  border: solid 2px var(--main-font-color);
+  border-radius: var(--main-border-radius);
+
+  transition-duration: var(--main-transition-duration);
+}
+
+#page-menu > button:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+
+#page-menu > button:active {
+  scale: 1;
+  filter: var(--bg-click-color);
 }
 
 main {
