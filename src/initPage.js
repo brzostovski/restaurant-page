@@ -1,3 +1,5 @@
+import pizzaPicture from './pizza.jpg';
+
 export default function initPage() {
   let contentContainer = document.createElement('div');
   contentContainer.classList.add('content-container');
@@ -41,9 +43,11 @@ const homePage = (() => {
   const init = (() => {
     let homePageContent = {
       title: document.createElement('h1'),
+      image: document.createElement('img'),
     }
 
     homePageContent.title.textContent = 'Piazza Nuova';
+    homePageContent.image.src = pizzaPicture;
 
     Object.keys(homePageContent).forEach(key => {
       homePageWrapper.appendChild(homePageContent[key]);
