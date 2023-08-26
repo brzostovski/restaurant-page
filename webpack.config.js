@@ -5,7 +5,7 @@ module.exports = {
   mode: 'development',
   entry: {
     index: './src/index.js',
-    initPage: './src/initPage.js',
+    initPage: './src/initHomePage.js',
   },
   devtool: 'inline-source-map',
   plugins: [

@@ -1,4 +1,12 @@
 import './style.css';
-import initPage from './initPage';
+import initHomePage from './initHomePage';
 
-initPage();
+const page = (() => {
+  initHomePage();
+
+  const menuButtons = {
+    home: document.getElementById('home-btn'),
+  };
+
+  menuButtons.home.addEventListener('click', () => console.log('click'));
+})();
