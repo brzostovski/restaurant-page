@@ -7,6 +7,8 @@ module.exports = {
     index: './src/index.js',
     initPage: './src/initPage.js',
     loadHomePage: './src/loadHomePage.js',
+    loadMenuPage: './src/loadMenuPage.js',
+    loadFindUsPage: './src/loadFindUsPage.js',
   },
   devtool: 'inline-source-map',
   plugins: [

@@ -1,6 +1,9 @@
 import pizzaPicture from './pizza.jpg';
 
 export default function loadHomePage(mainWrapper = document.querySelector('main')) {
+  if (mainWrapper.id === 'home-page') return 0;
+
+  mainWrapper.innerHTML = '';
   mainWrapper.id = 'home-page';
 
   let homePageContent = {
